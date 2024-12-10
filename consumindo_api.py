@@ -27,19 +27,18 @@ dados = response.json()
 df = pd.DataFrame([dados])
 
 
-#lista_de_dados = df['data'].iloc[0]
+lista_de_dados = df['data'].iloc[0]
 
-#df_expanded = pd.json_normalize(lista_de_dados)
+df_expanded = pd.json_normalize(lista_de_dados)
 
-print(f"API_KEY: {api_key}")
+
 #SALVAR OS DADOS NO SQLSERVER
 data_base = os.getenv("DATA_BASE")
 
-"""
 server = r'DESKTOP-1KEA5IJ'
 database = data_base
 driver = 'ODBC Driver 17 for SQL SERVER'
 engine = create_engine("mssql+pyodbc://@DESKTOP-1KEA5IJ/database?driver=ODBC+Driver+17+for+SQL+Server&trusted_connection=yes")
 con = engine.connect()
 df_expanded.to_sql('Vagas_linkedin', con=con, index=False, if_exists="replace")
-"""
+
